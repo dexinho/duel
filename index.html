@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<body>
+    <div id ='holding-everything-together-div'>
+        <div id="combat-text">
+            <div class='exit-button-container'>
+                <button id='close-text'>X</button>
+            </div>
+            <div id='final-text-container'>
+                <div class='text-players' id='text-player-one'></div>
+                <div class='text-players' id='text-player-two'></div>
+                <div class='text-players' id='round-summary'></div>
+            </div>
+        </div>
+        <div id='container'>
+            <div class="empty-div"></div>
+            <div id='game-info-div'>
+                <div id = 'game-info-text'>
+                    <p class="text-about-game" style="color:purple; text-transform: uppercase;"><b>Rules</b></p>
+                    <p class="text-about-game">One player chooses an attack, other player defense</p>
+                    <p class="text-about-game">Keep on interchanging until a player has energy of 0</p>
+                    <p class="text-about-game">VS AI, player always attacks first</p>
+                    <br>
+                    <p class="text-about-game" style="color:red; text-transform: uppercase;"><b>Attacks</b></p>
+                    <p class="text-about-game"><b>Weak Attack:</b> 0 to 5 damage</p>
+                    <p class="text-about-game"><b>Strong Attack:</b> 0 to 15 damage, attacker loses 5 energy</p>
+                    <p class="text-about-game"><b>Fake Attack:</b> counters <b>Reflect</b>, otherwise does 0 damage</p>
+                    <br>
+                    <p class="text-about-game" style="color:blue; text-transform: uppercase;"><b>Defenses</b></p>
+                    <p class="text-about-game"><b>Reflect:</b> reflects but loses 15 energy against <b>Fake Attack</b></p>
+                    <p class="text-about-game"><b>Risky Block:</b> blocks -5 to 10 damage</p>
+                    <p class="text-about-game"><b>Mistery Block:</b> blocks 0 to 5 damage</p>
+                    <br>
+                    <p class="text-about-game" style="color:green; text-transform: uppercase;"><b>Options</b></p>
+                    <p class="text-about-game"><b>Text:</b> enables/disables text about every move</p>
+                    <p class="text-about-game"><b>Animations:</b> enables/disables animations per round</p>
+                    <p class="text-about-game"><b>Music:</b> enables/disables music</p>
+                    <p class="text-about-game"><b>Green is AI:</b> allows you play versus AI</p>
+                </div>
+            </div>
+            <div id='game-info-button-div'>
+                <button id='game-info-button'><div id="question-mark"><i class="fa-solid fa-circle-question"></i></div></button>
+            </div>
+            <div class="players player-one">
+                <div class='moves moves-player-one'>Attacking Moves</div>
+                <button class='action-buttons action-buttons-player-one attacking-buttons weak-attack'
+                    id='weak-attack-player-one'><i class="fa-solid fa-scissors"></i></i></button>
+                <button class='action-buttons action-buttons-player-one attacking-buttons strong-attack'
+                    id='strong-attack-player-one'><i class="fa-solid fa-fan"></i></i></button>
+                <button class='action-buttons action-buttons-player-one attacking-buttons fake-attack'
+                    id='fake-attack-player-one'><i class="fa-solid fa-down-left-and-up-right-to-center"></i></button>
+                <div class='moves moves-player-one'>Defensive Moves</div>
+                <button class='action-buttons action-buttons-player-one defensive-buttons mistery-block'
+                    id='mistery-block-player-one'><i class="fa-brands fa-padlet"></i></button>
+                <button class='action-buttons action-buttons-player-one defensive-buttons risky-block'
+                    id='risky-block-player-one'><i class="fa-solid fa-stroopwafel"></i></i></button>
+                <button class='action-buttons action-buttons-player-one defensive-buttons reflect-move'
+                    id='reflect-move-player-one'><i class="fa-solid fa-arrows-to-circle"></i></button>
+                <div class='div-for-slider slider-player-one'>
+                    <span class='numbers-player-one'>0</span><input id='slider-one' class='slider' type="range" min="0"
+                        max="100" value="100"><span class='numbers-player-one'>100</span>
+                </div>
+                <div class='div-for-total-energy'>
+                    <span class='span-for-total-energy'>Total energy: </span><span id='total-energy-player-one'
+                        class='span-for-total-energy'>100</span>
+                </div>
+            </div>
+            <div class="players player-two">
+                <div class='moves moves-player-two'>Attacking Moves</div>
+                <button class='action-buttons action-buttons-player-two attacking-buttons fake-attack'
+                    id='fake-attack-player-two'><i class="fa-solid fa-worm"></i></i></button>
+                <button class='action-buttons action-buttons-player-two attacking-buttons strong-attack'
+                    id='strong-attack-player-two'><i class="fa-solid fa-khanda"></i></i></button>
+                <button class='action-buttons action-buttons-player-two attacking-buttons weak-attack'
+                    id='weak-attack-player-two'><i class="fa-solid fa-broom"></i></button>
+                <div class='moves moves-player-two'>Defensive Moves</div>
+                <button class='action-buttons action-buttons-player-two defensive-buttons reflect-move'
+                    id='reflect-move-player-two'><i class="fa-brands fa-renren"></i></button>
+                <button class='action-buttons action-buttons-player-two defensive-buttons risky-block'
+                    id='risky-block-player-two'><i class="fa-brands fa-phoenix-squadron"></i></button>
+                <button class='action-buttons action-buttons-player-two defensive-buttons mistery-block'
+                    id='mistery-block-player-two'><i class="fa-solid fa-gear"></i></button>
+                <div class='div-for-slider slider-player-one'>
+                    <span class='numbers-player-two'>0</span><input id='slider-two' class='slider' type="range" min="0"
+                        max="100" value="100"><span class='numbers-player-two'>100</span>
+                </div>
+                <div class='div-for-total-energy'>
+                    <span class='span-for-total-energy'>Total energy: </span><span id='total-energy-player-two'
+                        class='span-for-total-energy'>100</span>
+                </div>
+            </div>
+        </div>
+        <div id ='checkboxes-container'>
+            <div class = 'sliders-for-text-and-music'>
+                <div id="text-speed-container" class="hello music-text-sliders">
+                    <input type="range" class='text-slider' id="text-speed-slider" min="1" max="80" step="1" value="40">
+                </div>
+                <div id="volume-container" class="music-text-sliders">
+                    <input class='music-slider' type="range" id="volume-slider" min="0" max="1" step="0.01" value="1">
+                </div>
+            </div>
+            <div class='hello' id="checkbox-for-text-and-volume-slider-container">
+                <div>
+                    <label name='text-checkbox' class="checkbox-lables text-label" id="text-label">
+                        <input class='checkboxes' id='text-checkbox' type='checkbox'><span class="text-animations-music-span" id ='text-span'>Text</span>
+                    </label>
+                </div>
+                <div class="music-text-AI-checkbox-container">
+                    <div id='music-text-div'>
+                        <span id='music-span' class="text-animations-music-span">Music</span>
+                    </div>
+                    <div id='music-checkbox-div'>
+                        <input type="checkbox" class='checkboxes' id='music-checkbox'>
+                    </div>
+                </div>
+            </div>
+            <div class="hello music-and-animations-container">
+                <div>
+                    <label name='animations-checkbox' class="checkbox-lables animations-label" id="animations-label">
+                    <input class='checkboxes' id='animations-checkbox' type='checkbox'><span class="text-animations-music-span" id ='animations-span'>Animations</span>
+                    </label> 
+                </div>
+                <div class="music-text-AI-checkbox-container">
+                    <div id='AI-text-div'>
+                        <span id='green-is-AI-span' class="text-animations-music-span">Green is AI</span>
+                    </div>
+                    <div id='AI-checkbox-div'>
+                        <input id='green-is-AI-checkbox' type="checkbox" class='checkboxes'>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <audio id="music" loop>
+            <source src="./photos_and_gifs/killer_instinct.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <div id="gifOverlay"></div>
+        <script src="app.js"></script>
+    </div>
+</body>
+
+
+</html>

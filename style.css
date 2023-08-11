@@ -1,0 +1,345 @@
+* {
+    font-family: 'Lato';
+    /* outline: 2px solid green; */
+}
+
+body {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 915px;
+}
+
+#holding-everything-together-div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 750px;
+    margin: 0;
+    padding: 0;
+}
+#container {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 45px 1fr 1fr 1fr 1fr 45px;
+    grid-auto-rows: minmax(50px, auto);
+    grid-column-gap: 10px;
+    background-image: url('./photos_and_gifs/cover.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center top;
+}
+.players {
+    width: 100%;
+    height: 200%;
+    display: flex;
+    flex-wrap: wrap;
+    display: flex;
+    gap: 3px;
+    justify-content: center;
+    align-items: center;
+    transform: translate(0, -80%);
+}
+#game-info-div{
+    /* display: flex;
+    flex-direction: column; */
+    position: relative;
+    visibility: hidden;
+    grid-column-start: 2;
+    grid-column-end: 6;
+    z-index: 999;
+    justify-content: space-between;
+    width: 100%;
+    height: 700px;
+    background-color: white;
+    border: 2px solid black;
+    /* transition: top 5s ease; */
+}
+.text-about-game {
+    text-align: center;
+    width: 100%;
+}
+#game-info-text {
+    width: 100%;
+}
+#game-info-button-div {
+    grid-column-start: 6;
+    grid-column-end: 7;
+    display: flex;
+    justify-content: flex-end;
+    height: 50px;
+    transform: translate(-5px, 5px);
+}
+#game-info-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    border: 11px solid black;
+}
+.player-one {
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+.player-two {
+    grid-column-start: 4;
+    grid-column-end: 7;
+}
+.fa-circle-question {
+    font-size: 32px;
+}
+#question-mark {
+    transform: translate(-50%, -10%);
+}
+.action-buttons {
+    font-size: 18px;
+    margin: 0;
+    max-width: 20%;
+    min-width: 32%;
+    min-height: 18%;
+    border-radius: 20px;
+    font-size: 30px;
+}
+#weak-attack-player-one {
+    background-color: palegoldenrod;
+}
+#weak-attack-player-two {
+    transform: scaleX(-1);
+    background-color: aquamarine;
+}
+#strong-attack-player-one {
+    background-color: darkkhaki;
+}
+#strong-attack-player-two {
+    transform: scaleX(-1);
+    background-color: teal;
+}
+#fake-attack-player-one {
+    background-color: wheat;
+}
+#fake-attack-player-two {
+    transform: scaleX(-1);
+    background-color: cadetblue;
+}
+#mistery-block-player-one {
+    background-color: lemonchiffon;
+}
+#mistery-block-player-two {
+    transform: scaleX(-1);
+    background-color: yellowgreen;
+}
+#risky-block-player-one {
+    background-color: sandybrown;
+}
+#risky-block-player-two {
+    transform: scaleX(-1);
+    background-color: olive;
+}
+#reflect-move-player-one{
+    background-color: cornsilk;
+}
+#reflect-move-player-two{
+    transform: scaleX(-1);
+    background-color: olivedrab;
+}
+.defensive-buttons {
+    border-radius: 50px;
+}
+.div-for-slider {
+    width: 99%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.slider {
+    color: lightgreen;
+    width: 80%;
+    min-width: 80%;
+}
+
+.div-for-total-energy {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    transform: translate(0, -50%);
+}
+.span-for-total-energy {
+    font-size: 20px;
+    color: white;
+}
+#total-energy-player-one {
+    color: blue;
+}
+#total-energy-player-one {
+    color: gold;
+}
+#total-energy-player-two {
+    color: lightgreen;
+}
+.numbers-player-one {
+    color: gold;
+}
+.numbers-player-two {
+    color: lightgreen;
+}
+.moves {
+    color: white;
+    text-align: center;
+    width: 100%;
+    height: 1%;
+    margin-top: 30px;
+}
+.moves-player-one {
+    color: yellow;
+}
+.moves-player-two {
+    color: lightgreen;
+}
+.numbers {
+    color: white;
+}
+#gifOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./photos_and_gifs/cover.jpg');
+    background-size: cover;
+    background-position: center;
+    display: none;
+    z-index: 9999; 
+}
+#music-animations-text-container {
+    color: red;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    transform: translate(0, -40px);
+    height: 30px;
+}
+#volume-and-text-container {
+    display: flex;
+    justify-content: space-between;
+    transform: translate(0, -90px);
+    width: 95%;
+}
+#combat-text{
+    display: none;
+    position: absolute;
+    background-color: white;
+    width: 480px;
+    height: 150px;
+    left: 50%;
+    transform: translate(-50%, -190%)
+}
+.exit-button-container {
+    visibility: hidden;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    height: 30px;
+    font-size: 25px;
+}
+.exit-button-container button:hover{
+    background-color: gray;
+}
+#final-text-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.text-players {
+    width: 100%;
+    height: 20%;
+    text-align: center;
+}
+.animations-and-text {
+    width: 20%;
+    height: 200%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    transform: translate(0, -50%);
+}
+.text-label, .animations-label {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+#text-span, #animations-span {
+    transform: translate(0, 30%);
+}
+.music-and-animations-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+#checkbox-for-text-and-volume-slider-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+#checkboxes-container {
+    margin: auto;
+    width: 99%;
+    transform: translate(0, -110%);
+}
+#text-checkbox, #animations-checkbox {
+    transform: translate(-2px, 0);
+}
+#music-checkbox {
+    transform: translate(2px, 0);
+}
+.music-text-AI-checkbox-container {
+    display: flex;
+    align-items: center;
+}
+.sliders-for-text-and-music {
+    display: flex;
+    justify-content: space-between;
+}
+.checkboxes {
+    width: 25px;
+    height: 25px;
+}
+.text-slider {
+    width: 60px;
+}
+.music-slider {
+    width: 75px;
+}
+#volume-container, #text-speed-container {
+    visibility: hidden;
+}
+#AI-checkbox-div {
+    transform: translate(2px, 0);
+}
+#green-is-AI-span {
+    font-weight: bold;
+    color: lightgreen;
+}
+#animations-span {
+    font-weight: bold;
+    color: turquoise;
+}
+#text-span {
+    font-weight: bold;
+    color: fuchsia;
+}
+#music-span {
+    font-weight: bold;
+    color: orange;
+}
